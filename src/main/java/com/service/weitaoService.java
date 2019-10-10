@@ -18,7 +18,11 @@ public interface weitaoService {
     int shanChu1(Integer uid);
     int userAdd(user user);
     int addGoods(goods goods);
-
+     boolean  addGoodOne(goods goods);
+     List<goods> showAllGoods();
+     void delGoodByIdOne(int gId);
+     goods showOneGoodsById(int gId);
+     boolean updateGoodsById(goods goods);
     List<appraise> showAllBuys();
     void delBuysById(int aId);
     List<appraise> search(appraise appraise);

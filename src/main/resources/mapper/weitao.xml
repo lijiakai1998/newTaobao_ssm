@@ -170,4 +170,33 @@
         set g_name = #{gName}, g_price = #{gPrice}, g_store = #{gStore}, g_image = #{gImage}
         where g_id = #{gId}
     </update>
+
+
+<!--购物车-->
+    <insert id="insertIntoShoppingCart" parameterType="com.entity.shoppingCat">
+         insert  into shoppingCart(s_uid,s_gid) values(#{sUid},#{sGid})
+     </insert>
+    <select id="showAllShoppingGoods" resultType="com.entity.shoppingCat" >
+        select * from  shoppingCart
+    </select>
+    <delete id="delShoppingGoodsByGid" parameterType="java.lang.Integer">
+        delete from shoppingCart where s_gid=#{sGid}
+    </delete>
+
+    <insert id="addGoods" parameterType="com.entity.goods">
+        insert into goods(g_name,g_price,g_store,g_pageView,g_image) values(#{gName},#{gPrice},#{gStore},#{gPageView},#{gImage})
+    </insert>
+    <select id="showAllGoods" resultType="com.entity.goods">
+        select * from goods
+    </select>
+    <delete id="delGoodById" parameterType="java.lang.Integer">
+        delete  from goods where g_id=#{gId}
+    </delete>
+    <select id="showOneGoodsById" resultType="com.entity.goods" parameterType="java.lang.Integer">
+        select * from goods where g_id=#{gId}
+    </select>
+    <update id="updateGoodsById" parameterType="com.entity.goods">
+        update goods set g_name=#{gName},g_price=#{gPrice},g_store=#{gStore},g_pageView=#{gPageView},g_image=#{gImage}
+        where g_id=#{gId}
+    </update>
 </mapper>

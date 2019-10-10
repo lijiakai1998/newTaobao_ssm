@@ -12,6 +12,7 @@ import java.util.List;
 public class weitaoServiceImpl implements weitaoService {
     @Autowired
     private weitao weitao;
+
     public int zhuce(administrators administrators){
         return weitao.zhuce(administrators);
     }
@@ -47,6 +48,34 @@ public class weitaoServiceImpl implements weitaoService {
     public int addGoods(goods goods) {
         return weitao.addGoods(goods);
     }
+
+    @Override
+    public boolean addGoodOne(goods goods) {
+        weitao.addGood(goods);
+        return true;
+    }
+
+    @Override
+    public List<goods> showAllGoods() {
+        return weitao.showAllGoods();
+    }
+
+    @Override
+    public void delGoodByIdOne(int gId) {
+        weitao.delGoodById(gId);
+    }
+
+    @Override
+    public goods showOneGoodsById(int gId) {
+        return weitao.showOneGoodsById(gId);
+    }
+
+    @Override
+    public boolean updateGoodsById(goods goods) {
+        weitao.updateGoodsById(goods);
+        return true;
+    }
+
     @Override
     public List<appraise> showAllBuys() {
         return weitao.showAllBuys();

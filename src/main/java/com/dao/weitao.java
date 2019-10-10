@@ -27,4 +27,15 @@ public interface weitao {
       int insert1(dingdan dingdan);
       public void delGoodById(Integer gId);
       public void updateGoods(goods goods);
+
+      /*购物车*/
+       public void insertIntoShoppingCart(shoppingCat shoppingCart);
+       public List<shoppingCat> showAllShoppingGoods();
+       public void delShoppingGoodsByGid(int sGid);
+       public List<goods> showAllGoods();
+       public void delGoodById(int gId);
+       public goods showOneGoodsById(int gId);
+       public void updateGoodsById(goods goods);
+       public void addGood(goods goods);
+
 }

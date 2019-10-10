@@ -202,6 +202,7 @@ public class adminController {
             request.setCharacterEncoding("utf-8");
             //获取参数
             String path=request.getServletContext().getRealPath("/")+"goodsImage\\";
+            out.println(path);
             String uuid= UUID.randomUUID().toString();
             uuid=uuid.replace("-","");
             String goodsImageName=img.getOriginalFilename();
